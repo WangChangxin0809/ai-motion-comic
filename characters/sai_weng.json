@@ -1,0 +1,29 @@
+{
+  "name": "sai_weng",
+  "description_anchor": "elderly Chinese man in his eighties living at the northern borderlands, deeply weathered wrinkled face from harsh wind and sun, long white wispy beard, calm knowing eyes that have seen all of life's reversals, thin frail build but steady posture, peaceful detached expression, ancient philosopher-farmer, man who understands fortune and misfortune are the same thing",
+  "outfits": {
+    "default": "rough patched grey hemp coat with fur trim for borderland cold, simple rope belt, worn thick cotton trousers, rough straw shoes, plain wooden staff, humble borderland hermit style"
+  },
+  "color_palette": {
+    "skin": "C4A882",
+    "hair": "E8E8E8",
+    "eyes": "4A4038",
+    "primary": "9E9E9E",
+    "accent": "6B4E3D"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 931018834
+}

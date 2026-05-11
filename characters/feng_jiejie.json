@@ -1,0 +1,29 @@
+{
+  "name": "feng_jiejie",
+  "description_anchor": "young Chinese woman in her late twenties, medium-length wavy black hair dyed chestnut brown, intelligent sharp eyes with ambition, fair skin with light makeup, tall slender figure, confident modern posture, overseas Chinese student in Singapore, capable independent aura",
+  "outfits": {
+    "default": "elegant cream silk blouse, tailored navy blue pencil skirt, simple silver necklace, black low heels, professional modern overseas style"
+  },
+  "color_palette": {
+    "skin": "F5E8D8",
+    "hair": "5C3A28",
+    "eyes": "3B2518",
+    "primary": "FFFFF0",
+    "accent": "1B2A4A"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 1691450984
+}

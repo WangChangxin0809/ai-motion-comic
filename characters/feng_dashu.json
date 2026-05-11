@@ -1,0 +1,29 @@
+{
+  "name": "feng_dashu",
+  "description_anchor": "middle-aged Chinese man in his fifties from rural village, large round eyes, wide flat nostrils, big broad square face, tall and sturdy heavyset build, weathered tanned skin from farm work, rough calloused hands, simple honest country folk appearance, warm but slightly crafty smile",
+  "outfits": {
+    "default": "faded blue-grey button-up shirt with sleeves, loose dark trousers, worn cloth shoes, simple worn belt, practical working-class rural clothing"
+  },
+  "color_palette": {
+    "skin": "C89B64",
+    "hair": "333333",
+    "eyes": "4A2810",
+    "primary": "7B9EBF",
+    "accent": "8B7355"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 114258722
+}

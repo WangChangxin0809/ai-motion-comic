@@ -1,0 +1,29 @@
+{
+  "name": "lao_dao",
+  "description_anchor": "elderly Chinese Daoist master in his seventies, thin lean build, clean-shaven bald chin, kind benevolent face with deep wise eyes, weathered warm skin, mysterious yet approachable aura, slender frame, calm serene expression, traditional Chinese sage appearance",
+  "outfits": {
+    "default": "traditional long blue Daoist robe with wide sleeves, simple cloth belt, plain cloth shoes, no ornaments, humble weathered fabric"
+  },
+  "color_palette": {
+    "skin": "D4A574",
+    "hair": "C0C0C0",
+    "eyes": "3B2F2F",
+    "primary": "3B5998",
+    "accent": "A89880"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 1131424582
+}

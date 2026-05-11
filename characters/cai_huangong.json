@@ -1,0 +1,29 @@
+{
+  "name": "cai_huangong",
+  "description_anchor": "ancient Chinese monarch in his fifties, overweight heavyset build, round fleshy face with double chin, arrogant dismissive eyes, pale unhealthy complexion from indulgence, well-groomed black beard streaked with grey, regal but stubborn bearing, Warring States period ruler, proud defiant posture",
+  "outfits": {
+    "default": "luxurious embroidered silk royal robe in deep crimson and gold, wide jade-studded belt, ornate court crown with tassels, elaborate jade pendants, Warring States aristocratic finery"
+  },
+  "color_palette": {
+    "skin": "E8D5B8",
+    "hair": "3A3028",
+    "eyes": "2C1E10",
+    "primary": "8B1A2B",
+    "accent": "DAA520"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 214840992
+}

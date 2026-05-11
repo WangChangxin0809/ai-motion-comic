@@ -1,0 +1,29 @@
+{
+  "name": "wang_sanhe",
+  "description_anchor": "young Chinese man in his mid-twenties, short neat black hair, sharp intelligent eyes, fair warm skin, average height, slim athletic build, upright posture, has the look of a thoughtful rational intellectual, modern Chinese young professional",
+  "outfits": {
+    "default": "clean white button-up shirt with rolled sleeves, dark grey chinos, simple black leather belt, casual brown leather shoes"
+  },
+  "color_palette": {
+    "skin": "F5D0A9",
+    "hair": "1A1A1A",
+    "eyes": "2C1810",
+    "primary": "FFFFFF",
+    "accent": "4A4A4A"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 1240837245
+}

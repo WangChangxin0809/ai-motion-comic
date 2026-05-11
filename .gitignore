@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Secrets & local config
+.env
+*.local.json
+.claude/
+
+# Dependencies
+node_modules/
+
+# Novels (large text files)
+novels/
+
+# Generated archives
+*.tar.gz
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal lock file
+skills-lock.json

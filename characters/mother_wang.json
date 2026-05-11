@@ -1,0 +1,29 @@
+{
+  "name": "mother_wang",
+  "description_anchor": "middle-aged Chinese woman in her early fifties, short practical black hair with some grey at temples, warm round face, bright energetic eyes full of life, healthy rosy complexion from active lifestyle, average height, sturdy cheerful build, lively spirited aura, straightforward no-nonsense country mother",
+  "outfits": {
+    "default": "simple floral print blouse in warm tones, comfortable dark brown trousers, practical flat cloth shoes, no jewelry, down-to-earth homey style"
+  },
+  "color_palette": {
+    "skin": "F2D5B5",
+    "hair": "3A2820",
+    "eyes": "3B2F1F",
+    "primary": "CC6644",
+    "accent": "8B6914"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 1766204160
+}

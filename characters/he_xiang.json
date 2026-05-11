@@ -1,0 +1,29 @@
+{
+  "name": "he_xiang",
+  "description_anchor": "young Chinese woman in her early twenties, small gentle eyes that smile into crescents, sweet dimples on both cheeks, fair porcelain skin, petite slim build, long straight black hair simply tied back, small delicate mouth with white teeth, innocent pure graceful aura, intellectual scholarly beauty, natural unadorned look",
+  "outfits": {
+    "default": "simple white blouse with small collar, light blue floral print skirt, white canvas sneakers, delicate silver stud earrings, casual bookish style"
+  },
+  "color_palette": {
+    "skin": "F5EDE3",
+    "hair": "1C110A",
+    "eyes": "3B2820",
+    "primary": "FFFFFF",
+    "accent": "87CEEB"
+  },
+  "style_keywords": "Chinese manhua donghua style, semi-realistic rendering, rich detailed shading, elegant color palette, refined linework, webcomic aesthetic",
+  "default_pose": "standing, full body, hands at sides, looking at viewer, upright posture",
+  "expressions": [
+    "neutral",
+    "happy",
+    "angry",
+    "sad",
+    "surprised",
+    "thinking",
+    "smug",
+    "blushing",
+    "serious",
+    "laughing"
+  ],
+  "seed": 1710175194
+}
