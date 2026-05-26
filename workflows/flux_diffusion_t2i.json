@@ -1,0 +1,212 @@
+{
+  "id": "flux-diffusion-t2i",
+  "revision": 1,
+  "last_node_id": 9,
+  "last_link_id": 10,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "DualCLIPLoader",
+      "pos": [100, -100],
+      "size": [300, 106],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {"name": "clip_name1", "type": "COMBO", "link": null},
+        {"name": "clip_name2", "type": "COMBO", "link": null},
+        {"name": "type", "type": "COMBO", "link": null}
+      ],
+      "outputs": [
+        {"name": "CLIP", "type": "CLIP", "links": [1, 2]}
+      ],
+      "properties": {"Node name for S&R": "DualCLIPLoader"},
+      "widgets_values": ["t5/t5xxl_fp8_e4m3fn.safetensors", "clip_l.safetensors", "flux"],
+      "title": "DualCLIPLoader (T5 + CLIP-L)"
+    },
+    {
+      "id": 2,
+      "type": "UNETLoader",
+      "pos": [100, 200],
+      "size": [300, 82],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {"name": "unet_name", "type": "COMBO", "link": null},
+        {"name": "weight_dtype", "type": "COMBO", "link": null}
+      ],
+      "outputs": [
+        {"name": "MODEL", "type": "MODEL", "links": [3]}
+      ],
+      "properties": {"Node name for S&R": "UNETLoader"},
+      "widgets_values": ["FLUX1/flux1-dev-fp8.safetensors", "fp8_e4m3fn"],
+      "title": "UNETLoader (FLUX fp8)"
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [100, 380],
+      "size": [300, 82],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {"name": "vae_name", "type": "COMBO", "link": null}
+      ],
+      "outputs": [
+        {"name": "VAE", "type": "VAE", "links": [4]}
+      ],
+      "properties": {"Node name for S&R": "VAELoader"},
+      "widgets_values": ["ae.safetensors"],
+      "title": "VAELoader ⚠️ 需先安装 ae.safetensors"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [480, -200],
+      "size": [400, 250],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {"name": "clip", "type": "CLIP", "link": 1},
+        {"name": "clip_l", "type": "STRING", "link": null},
+        {"name": "t5xxl", "type": "STRING", "link": null},
+        {"name": "guidance", "type": "FLOAT", "link": null}
+      ],
+      "outputs": [
+        {"name": "CONDITIONING", "type": "CONDITIONING", "links": [5]}
+      ],
+      "properties": {"Node name for S&R": "CLIPTextEncodeFlux"},
+      "widgets_values": [
+        "a cute cat sitting on a windowsill, golden hour lighting, soft bokeh background, high quality, sharp focus",
+        "a cute cat sitting on a windowsill, golden hour lighting, soft bokeh background, high quality, sharp focus, detailed fur texture, warm sunlight",
+        3.5
+      ],
+      "title": "正面提示词"
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [480, 100],
+      "size": [400, 250],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {"name": "clip", "type": "CLIP", "link": 2},
+        {"name": "clip_l", "type": "STRING", "link": null},
+        {"name": "t5xxl", "type": "STRING", "link": null},
+        {"name": "guidance", "type": "FLOAT", "link": null}
+      ],
+      "outputs": [
+        {"name": "CONDITIONING", "type": "CONDITIONING", "links": [6]}
+      ],
+      "properties": {"Node name for S&R": "CLIPTextEncodeFlux"},
+      "widgets_values": [
+        "blurry, bad quality, distorted, ugly, low resolution, deformed, extra limbs, bad anatomy, watermark, text, logo",
+        "blurry, bad quality, distorted, ugly, deformed",
+        3.5
+      ],
+      "title": "负面提示词"
+    },
+    {
+      "id": 6,
+      "type": "EmptyFlux2LatentImage",
+      "pos": [480, 420],
+      "size": [280, 106],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {"name": "width", "type": "INT", "link": null},
+        {"name": "height", "type": "INT", "link": null},
+        {"name": "batch_size", "type": "INT", "link": null}
+      ],
+      "outputs": [
+        {"name": "LATENT", "type": "LATENT", "links": [7]}
+      ],
+      "properties": {"Node name for S&R": "EmptyFlux2LatentImage"},
+      "widgets_values": [1024, 1024, 1],
+      "title": "Latent 1024×1024"
+    },
+    {
+      "id": 7,
+      "type": "KSampler",
+      "pos": [950, 120],
+      "size": [300, 262],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {"name": "model", "type": "MODEL", "link": 3},
+        {"name": "positive", "type": "CONDITIONING", "link": 5},
+        {"name": "negative", "type": "CONDITIONING", "link": 6},
+        {"name": "latent_image", "type": "LATENT", "link": 7},
+        {"name": "seed", "type": "INT", "link": null},
+        {"name": "steps", "type": "INT", "link": null},
+        {"name": "cfg", "type": "FLOAT", "link": null},
+        {"name": "sampler_name", "type": "COMBO", "link": null},
+        {"name": "scheduler", "type": "COMBO", "link": null},
+        {"name": "denoise", "type": "FLOAT", "link": null}
+      ],
+      "outputs": [
+        {"name": "LATENT", "type": "LATENT", "links": [8]}
+      ],
+      "properties": {"Node name for S&R": "KSampler"},
+      "widgets_values": [42, 20, 3.5, "euler", "simple", 1.0],
+      "title": "KSampler"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [1320, 180],
+      "size": [200, 46],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {"name": "samples", "type": "LATENT", "link": 8},
+        {"name": "vae", "type": "VAE", "link": 4}
+      ],
+      "outputs": [
+        {"name": "IMAGE", "type": "IMAGE", "links": [9]}
+      ],
+      "properties": {"Node name for S&R": "VAEDecode"},
+      "widgets_values": [],
+      "title": "VAEDecode"
+    },
+    {
+      "id": 9,
+      "type": "PreviewImage",
+      "pos": [1580, 180],
+      "size": [300, 280],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {"name": "images", "type": "IMAGE", "link": 9}
+      ],
+      "outputs": [],
+      "properties": {"Node name for S&R": "PreviewImage"},
+      "widgets_values": [],
+      "title": "预览"
+    }
+  ],
+  "links": [
+    [1, 1, 0, 4, 0, "CLIP"],
+    [2, 1, 0, 5, 0, "CLIP"],
+    [3, 2, 0, 7, 0, "MODEL"],
+    [4, 3, 0, 8, 1, "VAE"],
+    [5, 4, 0, 7, 1, "CONDITIONING"],
+    [6, 5, 0, 7, 2, "CONDITIONING"],
+    [7, 6, 0, 7, 3, "LATENT"],
+    [8, 7, 0, 8, 0, "LATENT"],
+    [9, 8, 0, 9, 0, "IMAGE"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

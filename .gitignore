@@ -26,5 +26,35 @@ novels/
 .DS_Store
 Thumbs.db
 
+# Personal credentials
+Serena/
+
 # Personal lock file
 skills-lock.json
+
+# Playwright temp
+.playwright-cli/
+.playwright-mcp/
+
+# Temp screenshots and notes (root level)
+/comfyui-*.png
+/comfyui-*.md
+/current-page.md
+/download-status.png
+/manager-dialog.png
+/Flux_output.png
+/workflow-*.png
+/workflow-*.md
+/workflow-state.png
+
+# Generated output
+scripts/output/
+
+# Model files
+*.safetensors
+*.bin
+*.ckpt
+*.pth
+
+# Base64 blobs
+workflows/workflow_b64.txt
